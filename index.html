@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <script>
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") document.documentElement.classList.add("dark");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./theme.js" defer></script>
+
+    <title>Nico</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a class="brand" href="#start">Nico</a>
+            <a class="nav-link" href="#warum">Warum</a>
+            <a class="nav-link" href="#roadmap">Roadmap</a>
+            <a class="nav-link" href="#projekte">Projekte</a>
+            <a class="nav-link" href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <button id="themeToggle" type="button" aria-label="Theme umschalten">🌙 Dark Mode</button>
+
+    <div class="card">
+        <h1 id="start">Hey, ich bin Nico</h1>
+        <p>
+            Ich studiere Softwaretechnik und Medieninformatik im 2. Semester und baue mir gerade Schritt für Schritt
+            etwas eigenes auf.
+        </p>
+        <p>Start: 24.01.2026</p>
+
+        <h2 id="warum">Warum diese Seite?</h2>
+        <p>
+            Weil ich meine Zeit nicht mehr nur mit Zocken verbringen will, sondern etwas lernen möchte, das mir
+            langfristig hilft.
+        </p>
+
+        <h2 id="roadmap">Meine Ziele / Roadmap</h2>
+        <ul>
+            <li>Webentwicklung lernen</li>
+            <li>
+                Erste Projekte bauen
+                <ul>
+                    <li>Forum Fans</li>
+                    <li>Website Ponyhof</li>
+                </ul>
+            </li>
+            <li>Neben meinem Studium Geld verdienen</li>
+        </ul>
+
+        <h2 id="projekte">Projekte</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Projekt Forum</h3>
+                <p>Forum für mein Bruder seine Fangruppe erstellen</p>
+            </div>
+            <div class="project">
+                <h3>Projekt Ponyhof</h3>
+                <p>Website für meine Eltern erstellen</p>
+            </div>
+            <div class="project">
+                <h3>Projekt Unknown</h3>
+                <p>Brauche erst mal Geld zum reisen :/</p>
+            </div>
+        </div>
+
+        <h2 id="skills">Skills</h2>
+        <div class="skills">
+            <span class="skill">HTML (Basics)</span>
+            <span class="skill">CSS (Basics)</span>
+            <span class="skill">JavaScript (Basics)</span>
+            <span class="skill">UI/DarkMode</span>
+            <span class="skill">Lernend: React, Backend, C, C++, Python</span>
+        </div>
+
+        <h2 id="kontakt">Kontakt</h2>
+        <div class="contact">
+            <a class="contact-item contact-item-email" href="mailto:nicosauter@proton.me">
+                <h3>Email</h3>
+                <p>nicosauter@proton.me</p>
+            </a>
+            <a class="contact-item contact-item-github" target="_blank" rel="noopener norefferrer"
+                href="https://github.com/NiC0ding">
+                <h3>Github</h3>
+                <p>github.com/NiC0ding</p>
+            </a>
+            <a class="contact-item contact-item-discord" href="#">
+                <h3>Discord</h3>
+                <p>nnicoo.</p>
+            </a>
+            <a class="contact-item contact-item-linkedin" href="#">
+                <h3>Linkedin</h3>
+                <p>NicoSauter</p>
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll("header nav a.nav-link");
+        const headings = document.querySelectorAll("h1[id], h2[id]");
+
+        function setActiveLink(id) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            const active = document.querySelector(`header nav a.nav-link[href="#${id}"]`);
+            if (active) active.classList.add("active");
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveLink(entry.target.id);
+                }
+            });
+        }, {
+            threshold: 0.6
+        });
+
+        headings.forEach(h => observer.observe(h));
+    </script>
+
+    <footer class="footer">
+        <p>© 2026 Nico Sauter · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+    </footer>
+</body>
+
+</html>

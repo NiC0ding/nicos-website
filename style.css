@@ -1,0 +1,262 @@
+:root {
+    --bg: #eef2f5;
+    --card-bg: #ffffff;
+    --text: #1f2937;
+    --muted: #4b5563;
+    --accent: #2563eb;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+    --boxshadow: 0 8px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Dark Mode */
+html.dark {
+    --bg: #121826;
+    --card-bg: #1a2236;
+    --text: #e6e8ee;
+    --muted: #b0b6c3;
+    --accent: #7aa2f7;
+    --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    --boxshadow: 0 8px 12px rgba(0, 0, 0, 0.35);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 90px 40px 40px;
+}
+
+body, .card, #themeToggle {
+    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+#themeToggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 10px;
+
+    background: var(--card-bg);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#themeToggle:hover {
+    transform: translateY(-1px);
+}
+
+#themeToggle:active {
+    transform: translateY(1px);
+}
+
+.card {
+    background: var(--card-bg);
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 42px;
+}
+
+h1 h2 {
+    scroll-margin-top: 90px;
+}
+
+p, li {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+li:hover {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul ul {
+    margin-top: 6px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: var(--muted);
+    padding-left: 20px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);    
+}
+
+header nav {
+    display: flex;
+    gap: 16px;
+    padding: 12px 16px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+header nav a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+html.dark header nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+header nav a:active {
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--accent);
+}
+
+html.dark header nav a:active {
+    background: rgba(255, 255, 255, 0.08);
+    columns: var(--accent);
+}
+
+header nav a.brand {
+    font-weight: 700;
+}
+
+.projects {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 800px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+    .contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project {
+    background: var(--bg);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: var(--boxshadow);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--boxshadow);
+    cursor: pointer;
+}
+
+html.dark .project {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.project p {
+    margin: 0;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+}
+
+html.dark .skill {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.contact {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.contact-item {
+    background: var(--bg);
+    padding: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: var(--boxshadow);
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.contact-item h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.footer {
+    margin-top: 60px;
+    padding: 24px 16px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--accent)
+}

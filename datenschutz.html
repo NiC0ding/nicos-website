@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+<head>
+    <meta charset="UTF-8">
+
+    <script>
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") document.documentElement.classList.add("dark");
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./theme.js" defer></script>
+
+</head>
+
+<body>
+
+    <button id="themeToggle" type="button" aria-label="Theme umschalten">🌙 Dark Mode</button>
+
+    <div class="card">
+        <h1>Datenschutz</h1>
+
+        <p><a href="index.html">← Zurück zur Startseite</a></p>
+        
+        <p>
+        Der Schutz Ihrer persönlichen Daten ist mir wichtig.
+        </p>
+
+        <p>
+        Diese Website verarbeitet keine personenbezogenen Daten.
+        Es werden keine Cookies gesetzt und keine Tracking- oder Analyse-Tools verwendet.
+        </p>
+
+        <p>
+        Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch
+        Informationen (z. B. IP-Adresse) in sogenannten Server-Logfiles erhoben.
+        Diese Daten sind technisch erforderlich, um die Website korrekt anzuzeigen.
+        </p>
+
+        <p>
+        Eine Zusammenführung dieser Daten mit anderen Datenquellen erfolgt nicht.
+        </p>
+
+        <p>
+        Verantwortlich für den Datenschutz:<br>
+        Nico Sauter<br>
+        E-Mail: nicosauter@proton.me
+        </p>
+
+    </div>
+
+</body>
+
+</html>

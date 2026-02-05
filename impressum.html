@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+    
+<head>
+    <meta charset="UTF-8">
+
+    <script>
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") document.documentElement.classList.add("dark");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./theme.js" defer></script>
+
+</head>
+
+<body>
+
+    <button id="themeToggle" type="button" aria-label="Theme umschalten">🌙 Dark Mode</button>
+
+    <div class="card">
+        <h1>Impressum</h1>
+
+        <p><a href="index.html">← Zurück zur Startseite</a></p>
+
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+
+        <p>
+            Nico Sauter<br>
+            Deutschland
+        </p>
+
+        <p>
+            E-Mail: nicosauter@proton.me
+        </p>
+
+        <p>
+            Diese Website dient ausschließlich privaten und informativen Zwecken.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
